@@ -1,6 +1,8 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ModelBarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +14,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Read
+Route::get('/dashboard', [ModelBarangController::class, 'show']);
+Route::get('/', [ModelBarangController::class, 'show']);
 
-Route::get('/', function () {
-    return view('dashboard');
+//Create
+Route::get('/tambah-barang', function(){
+    return view('dashboard-tambah-barang');
 });
+Route::post('insert_proses', [ModelBarangController::class, 'store']);
+
+//Update
+Route::get('/update-barang/{id}', [ModelBarangController::class, 'single']);
+Route::post('/update_proses', [ModelBarangController::class, 'update']);
+
+
+
