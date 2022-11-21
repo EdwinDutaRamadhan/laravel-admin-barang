@@ -1,4 +1,6 @@
 @extends('layout.dashboard-main')
 @section('container')
-    @include('partials.edit-form')
-@endsection
+    @foreach ($barang as $b)
+        @include('partials.edit-form')
+    @endforeach()
+    @endsection

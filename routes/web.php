@@ -28,5 +28,8 @@ Route::post('insert_proses', [ModelBarangController::class, 'store']);
 Route::get('/update-barang/{id}', [ModelBarangController::class, 'single']);
 Route::post('/update_proses', [ModelBarangController::class, 'update']);
 
+//Delete
+Route::get('/delete-barang/{id}', [ModelBarangController::class, 'destroy']);
+
 
 

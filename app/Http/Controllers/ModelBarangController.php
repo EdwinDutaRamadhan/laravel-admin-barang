@@ -93,7 +93,8 @@ class ModelBarangController extends Controller
      */
     public function destroy(Request $request)
     {
-        //
+        ModelBarang::where('id', $request->id)->delete();
+        return redirect('/dashboard');
     }
 
     /** 
